@@ -48,9 +48,8 @@ function doingItFunctionaly() {
 		return names + ', ' + name;
 	}
 
-	var replace = function(names) {
-		if (!names) return "";
-		return names.replace(/,([^,]*)$/,' &$1');
+	var clean = function(names) {
+		return (names) ? names.replace(/,([^,]*)$/,' &$1')  : "No results"
 	}
 
 	var divisions = _.chain(mostPopular)
@@ -61,7 +60,7 @@ function doingItFunctionaly() {
 		.reduce(divisionNames)
 		.value();
 
-	console.log(replace(divisions));
+	console.log(clean(divisions));
 }
 
 
