@@ -1,5 +1,5 @@
 var _ = require('lodash');
-var mostPopular = require('./data/fotboll.json');
+var events = require('./data/fotboll.json');
 
 
 /*
@@ -9,17 +9,17 @@ var mostPopular = require('./data/fotboll.json');
 function doingItImperative() {
 	var onlyGroupArray = [], divisions ='';
 
-	for (i = 0; i < mostPopular.length; i++) {
+	for (i = 0; i < events.length; i++) {
 		var found = false;
-		if (mostPopular[i].group == 'Allsvenskan' || mostPopular[i].group === 'Superettan' || mostPopular[i].group === 'Division 1 Norra') {
+		if (events[i].group == 'Allsvenskan' || events[i].group === 'Superettan' || events[i].group === 'Division 1 Norra') {
 			for (j = 0; j < onlyGroupArray.length; j++) {
-				if (onlyGroupArray[j] === mostPopular[i].group) {
+				if (onlyGroupArray[j] === events[i].group) {
 					found = true;
 					break;
 				}
 			}
 			if (!found) {
-				onlyGroupArray.push(mostPopular[i].group);
+				onlyGroupArray.push(events[i].group);
 			}
 		}
 	}
@@ -52,13 +52,13 @@ function doingItFunctionaly() {
 		return (names) ? names.replace(/,([^,]*)$/,' &$1')  : "No results"
 	}
 
-	var divisions = _.chain(mostPopular)
+	var divisions = _.chain(events)
 		.map(groupFromEvent)
 		.filter(swedishDivisions)
 		.uniq()
 		.sortBy()
 		.reduce(divisionNames)
-		.value();
+		.value();	
 
 	console.log(clean(divisions));
 }
