@@ -6,11 +6,6 @@
 	  "awayName": "Jönköpings Södra",
 	  "start": "2014-06-25T17:00Z",
 	  "group": "Superettan",
-	  "groupId": 1000095052,
-	  "type": "ET_MATCH",
-	  "liveBetOffers": true,
-	  "nonLiveBoCount": 21,
-	  "sportId": 1000093190,
 	  "sport": "FOOTBALL"
 	},
 	{
@@ -20,11 +15,6 @@
 	  "awayName": "Ljungskile SK ",
 	  "start": "2014-06-25T17:00Z",
 	  "group": "Superettan",
-	  "groupId": 1000095052,
-	  "type": "ET_MATCH",
-	  "liveBetOffers": true,
-	  "nonLiveBoCount": 22,
-	  "sportId": 1000093190,
 	  "sport": "FOOTBALL"
 	},
 
@@ -35,11 +25,6 @@
 	  "awayName": "Trelleborgs FF",
 	  "start": "2014-06-25T17:00Z",
 	  "group": "Superettan",
-	  "groupId": 1000095052,
-	  "type": "ET_MATCH",
-	  "liveBetOffers": true,
-	  "nonLiveBoCount": 22,
-	  "sportId": 1000093190,
 	  "sport": "FOOTBALL"
 	},
 	{
@@ -49,11 +34,6 @@
       "awayName": "IFK Göteborg",
       "start": "2014-03-12T16:00Z",
       "group": "Allsvenskan",
-      "type": "ET_MATCH",
-      "liveBetOffers": true,
-       "nonLiveBoCount": 25,
-      "groupId": 1000305784,
-      "sportId": 1000093190,
       "sport": "FOOTBALL"
 	},
 	{
@@ -63,11 +43,6 @@
 	  "awayName": "MyPa ",
 	  "start": "2014-06-25T15:30Z",
 	  "group": "Veikkausliiga",
-	  "groupId": 1000094989,
-	  "type": "ET_MATCH",
-	  "liveBetOffers": true,
-	  "nonLiveBoCount": 34,
-	  "sportId": 1000093190,
 	  "sport": "FOOTBALL"
 	},
 	{
@@ -77,11 +52,6 @@
 	  "awayName": "Väsby United",
 	  "start": "2014-06-25T17:00Z",
 	  "group": "Division 1 Norra",
-	  "groupId": 1000094744,
-	  "type": "ET_MATCH",
-	  "liveBetOffers": true,
-	  "nonLiveBoCount": 16,
-	  "sportId": 1000093190,
 	  "sport": "FOOTBALL"
 	}
  ]

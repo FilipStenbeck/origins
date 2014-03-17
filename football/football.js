@@ -33,8 +33,8 @@ function doingItFunctionaly() {
 	var allEvents, clean, fold, groupFromEvent, onlyOne, onlySwedish, result, sortByName;
 
 	//Declaring functions
-	allEvents = function() {
-    	return require("./data/fotboll.json");
+	allEvents = function(data) {
+    	return require(data);
   	};
 
 	groupFromEvent = function(data) {
@@ -72,10 +72,11 @@ function doingItFunctionaly() {
 	};
 
 	//Composing a function which transform the data
-	result = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents);
-	
-	//Printing result
-	console.log(result())
+	divisions = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents);
+
+	//Printing result 
+	result = divisions("./data/fotboll.json");
+	console.log(result)
 }
 
 
