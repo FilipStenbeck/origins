@@ -10,7 +10,7 @@
 
   groupFromEvent = function(data) {
     return _.map(data, function(event) {
-      return event.group;
+      return event.league;
     });
   };
 

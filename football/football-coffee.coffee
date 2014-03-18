@@ -4,7 +4,7 @@ _ = require("lodash");
 #Declaring functions
 allEvents =  (data) -> require data
 
-groupFromEvent = (data) -> _.map data, (event) -> 	event.group
+groupFromEvent = (data) -> _.map data, (event) -> event.league
 
 onlySwedish = (data) -> _.filter data, (name) -> 
 	name is 'Allsvenskan' or name is 'Superettan' or name is 'Division 1 Norra' 		

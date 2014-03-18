@@ -1,57 +1,45 @@
 ﻿[
 	{
-	  "id": 1001216937,
 	  "name": "Falkenberg - Jönköpings Södra",
-	  "homeName": "Falkenberg",
-	  "awayName": "Jönköpings Södra",
+	  "home": "Falkenberg",
+	  "away": "Jönköpings Södra",
 	  "start": "2014-06-25T17:00Z",
-	  "group": "Superettan",
-	  "sport": "FOOTBALL"
+	  "league": "Superettan"
 	},
 	{
-	  "id": 1001216935,
 	  "name": "Ängelholms FF  - Ljungskile SK ",
-	  "homeName": "Ängelholms FF ",
-	  "awayName": "Ljungskile SK ",
+	  "home": "Ängelholms FF ",
+	  "away": "Ljungskile SK ",
 	  "start": "2014-06-25T17:00Z",
-	  "group": "Superettan",
-	  "sport": "FOOTBALL"
+	  "league": "Superettan"
 	},
 
 	{
-	  "id": 1001216934,
 	  "name": "Degerfors IF - Trelleborgs FF",
-	  "homeName": "Degerfors IF",
-	  "awayName": "Trelleborgs FF",
+	  "home": "Degerfors IF",
+	  "away": "Trelleborgs FF",
 	  "start": "2014-06-25T17:00Z",
-	  "group": "Superettan",
-	  "sport": "FOOTBALL"
+	  "league": "Superettan"
 	},
 	{
-      "id": 1001991443,
       "name": "Djurgården - IFK Göteborg",
-      "homeName": "Djurgården",
-      "awayName": "IFK Göteborg",
+      "home": "Djurgården",
+      "away": "IFK Göteborg",
       "start": "2014-03-12T16:00Z",
-      "group": "Allsvenskan",
-      "sport": "FOOTBALL"
+      "league": "Allsvenskan"
 	},
 	{
-	  "id": 1001223243,
 	  "name": "FF Jaro - MyPa",
-	  "homeName": "FF Jaro",
-	  "awayName": "MyPa ",
+	  "home": "FF Jaro",
+	  "away": "MyPa ",
 	  "start": "2014-06-25T15:30Z",
-	  "group": "Veikkausliiga",
-	  "sport": "FOOTBALL"
+	  "league": "Veikkausliiga"
 	},
 	{
-	  "id": 1001218316,
 	  "name": "Dalkurd FF - Vsby United",
-	  "homeName": "Dalkurd FF",
-	  "awayName": "Väsby United",
+	  "home": "Dalkurd FF",
+	  "away": "Väsby United",
 	  "start": "2014-06-25T17:00Z",
-	  "group": "Division 1 Norra",
-	  "sport": "FOOTBALL"
+	  "league": "Division 1 Norra"
 	}
  ]

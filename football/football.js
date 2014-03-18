@@ -9,15 +9,15 @@ function doingItImperative() {
 
 	for (i = 0; i < events.length; i++) {
 		var found = false;
-		if (events[i].group == 'Allsvenskan' || events[i].group === 'Superettan' || events[i].group === 'Division 1 Norra') {
+		if (events[i].league == 'Allsvenskan' || events[i].league === 'Superettan' || events[i].league === 'Division 1 Norra') {
 			for (j = 0; j < onlyGroupArray.length; j++) {
-				if (onlyGroupArray[j] === events[i].group) {
+				if (onlyGroupArray[j] === events[i].league) {
 					found = true;
 					break;
 				}
 			}
 			if (!found) {
-				onlyGroupArray.push(events[i].group);
+				onlyGroupArray.push(events[i].league);
 			}
 		}
 	}
@@ -39,7 +39,7 @@ function doingItFunctionaly() {
 
 	groupFromEvent = function(data) {
 		return _.map(data, function(event) {
-	  		return event.group;
+	  		return event.league;
 		});
 	};
 
