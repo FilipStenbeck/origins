@@ -1,86 +1,34 @@
 var _ = require('lodash');
 
+var app = {
+	data : require('./data/fotboll.json'),
+	result : []
+};
+ 
 /*
-* Printing sorted division names using imperative style
+* Getting sorted division names using imperative style
 */
 
 function doingItImperative() {
-	var events = require('./data/fotboll.json'), onlyGroupArray = [], divisions ='';
-
-	for (i = 0; i < events.length; i++) {
+	var onlyGroupArray = [], divisions ='';
+	for (i = 0; i < app.data.length; i++) {
 		var found = false;
-		if (events[i].league == 'Allsvenskan' || events[i].league === 'Superettan' || events[i].league === 'Division 1 Norra') {
+		if (app.data[i].league == 'Allsvenskan' || app.data[i].league === 'Superettan' || app.data[i].league === 'Division 1 Norra') {
 			for (j = 0; j < onlyGroupArray.length; j++) {
-				if (onlyGroupArray[j] === events[i].league) {
+				if (onlyGroupArray[j] === app.data[i].league) {
 					found = true;
 					break;
 				}
 			}
 			if (!found) {
-				onlyGroupArray.push(events[i].league);
+				onlyGroupArray.push(app.data[i].league);
 			}
 		}
 	}
-	divisions = onlyGroupArray.sort().join(', ').replace(/,([^,]*)$/,' &$1');
-	console.log(divisions)
+	app.result = onlyGroupArray.sort().join(', ').replace(/,([^,]*)$/,' &$1');
 }
-
-/*
-* Printing sorted division names using a functional style 
-*/
-
-function doingItFunctionaly() {
-	var allEvents, clean, fold, groupFromEvent, onlyOne, onlySwedish, result, sortByName;
-
-	//Declaring functions
-	allEvents = function(data) {
-    	return require(data);
-  	};
-
-	groupFromEvent = function(data) {
-		return _.map(data, function(event) {
-	  		return event.league;
-		});
-	};
-
-	onlySwedish = function(data) {
-		return _.filter(data, function(name) {
-	  		return name === 'Allsvenskan' || name === 'Superettan' || name === 'Division 1 Norra';
-		});
-	};
-
-	onlyOne = function(data) {
-		return _.unique(data);
-	};
-
-	sortByName = function(data) {
-		return data.sort();
-	};
-
-	fold = function(data) {
-		return _.reduce(data, function(names, name) {
-	  		return names + ', ' + name;
-		});
-	};
-
-	clean = function(data) {
-		if (data != null) {
-	  		return data.replace(/,([^,]*)$/, " &$1");
-		} else {
-	  		return "No Result";
-		}
-	};
-
-	//Composing a function which transform the data
-	divisions = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents);
-
-	//Printing result 
-	result = divisions("./data/fotboll.json");
-	console.log(result)
-}
-
 
 console.log(' \n--------------------------------------------- \n')
 doingItImperative();
-doingItFunctionaly();
+console.log (app.result);
 console.log(' \n--------------------------------------------- \n')

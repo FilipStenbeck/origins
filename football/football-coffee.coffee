@@ -2,7 +2,7 @@
 _ = require("lodash");
 
 #Declaring functions
-allEvents =  (data) -> require data
+allEvents =  (data) ->  data
 
 groupFromEvent = (data) -> _.map data, (event) -> event.league
 
@@ -21,7 +21,7 @@ clean = (data) -> if data? then data.replace(/,([^,]*)$/," &$1") else "No Result
 divisions = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents)
 
 #Printing result	
-result = divisions("./data/fotboll.json");
+result = divisions(require ("./data/fotboll.json"));
 
 console.log " \n--------------------------------------------- \n"
 console.log result

@@ -5,7 +5,7 @@
   _ = require("lodash");
 
   allEvents = function(data) {
-    return require(data);
+    return data;
   };
 
   groupFromEvent = function(data) {
@@ -44,7 +44,7 @@
 
   divisions = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents);
 
-  result = divisions("./data/fotboll.json");
+  result = divisions(require("./data/fotboll.json"));
 
   console.log(" \n--------------------------------------------- \n");
 
