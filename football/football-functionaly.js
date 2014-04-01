@@ -5,7 +5,7 @@ var _ = require('lodash');
 */
 
 function doingItFunctionaly() {
-	var allEvents, clean, fold, groupFromEvent, onlyOne, onlySwedish, result, sortByName;
+	var allEvents, clean, fold, groupFromEvent, onlyOne, onlySwedish, result, sortByName, result, leagues;
 
 	//Declaring functions
 	allEvents = function(data) {
@@ -47,10 +47,10 @@ function doingItFunctionaly() {
 	};
 
 	//Composing a function which transform the data
-	divisions = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents);
+	leagues  = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents);
 
 	//Printing result 
-	result = divisions(require("./data/fotboll.json"));
+	result = leagues (require("./data/fotboll.json"));
 	console.log(result)
 }
 
