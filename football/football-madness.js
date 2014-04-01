@@ -12,11 +12,9 @@ var app = {
 function doingItImperative(sorted, asString, unique, onlySwedish) {
 	var onlyGroupArray = [], divisions ='', found, shouldAdd;
 	for (i = 0; i < app.data.length; i++) {
-		found = false;
 		shouldAdd = false;
-		if (!onlySwedish || (app.data[i].league == 'Allsvenskan' 
-			|| app.data[i].league === 'Superettan' 
-			|| app.data[i].league === 'Division 1 Norra')) {
+		found = false;
+		if (!onlySwedish || (app.data[i].league == 'Allsvenskan' || app.data[i].league === 'Superettan' || app.data[i].league === 'Division 1 Norra')) {
 			shouldAdd = true;
 		}
 		if (shouldAdd) {
@@ -42,6 +40,6 @@ function doingItImperative(sorted, asString, unique, onlySwedish) {
 }
 
 console.log(' \n--------------------------------------------- \n')
-doingItImperative(true, true, true, true);
+doingItImperative(true, true, true, false);
 console.log (app.result);
 console.log(' \n--------------------------------------------- \n')
