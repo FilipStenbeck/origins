@@ -1,13 +1,11 @@
 ﻿[
 	{
-	  "name": "Falkenberg - Jönköpings Södra",
 	  "home": "Falkenberg",
 	  "away": "Jönköpings Södra",
 	  "start": "2014-06-25T17:00Z",
 	  "league": "Superettan"
 	},
 	{
-	  "name": "Ängelholms FF  - Ljungskile SK ",
 	  "home": "Ängelholms FF ",
 	  "away": "Ljungskile SK ",
 	  "start": "2014-06-25T17:00Z",
@@ -15,28 +13,24 @@
 	},
 
 	{
-	  "name": "Degerfors IF - Trelleborgs FF",
 	  "home": "Degerfors IF",
 	  "away": "Trelleborgs FF",
 	  "start": "2014-06-25T17:00Z",
 	  "league": "Superettan"
 	},
 	{
-      "name": "Djurgården - IFK Göteborg",
       "home": "Djurgården",
       "away": "IFK Göteborg",
       "start": "2014-03-12T16:00Z",
       "league": "Allsvenskan"
 	},
 	{
-	  "name": "FF Jaro - MyPa",
 	  "home": "FF Jaro",
 	  "away": "MyPa ",
 	  "start": "2014-06-25T15:30Z",
 	  "league": "Veikkausliiga"
 	},
 	{
-	  "name": "Dalkurd FF - Vsby United",
 	  "home": "Dalkurd FF",
 	  "away": "Väsby United",
 	  "start": "2014-06-25T17:00Z",

@@ -18,10 +18,10 @@ fold = (data) -> _.reduce data, (names, name) -> names + ', ' + name
 clean = (data) -> if data? then data.replace(/,([^,]*)$/," &$1") else "No Result"
 
 #Composing a function which transform the data
-divisions = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents)
+leagues = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents)
 
 #Printing result	
-result = divisions(require ("./data/fotboll.json"));
+result = leagues(require ("./data/fotboll.json"));
 
 console.log " \n--------------------------------------------- \n"
 console.log result
