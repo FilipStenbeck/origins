@@ -3,7 +3,7 @@ _ = require("lodash");
 
 map = (data) -> _.map data, (value) -> value + 1
 
-filter = (data) -> _.filter data, (value) -> value >2 		
+filter = (data) -> _.filter data, (value) -> value > 2 		
 
 reduce = (data) -> _.reduce data, (value, memo) -> value + memo
 
