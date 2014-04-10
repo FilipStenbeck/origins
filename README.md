@@ -1,4 +1,4 @@
 origins
 =======
 
-Code examples used in a presentation I made called "on the origin of functions"
+Code examples used in a presentation  called "on the origin of functions"
