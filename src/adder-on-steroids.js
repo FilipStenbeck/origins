@@ -9,3 +9,5 @@ var schwarzenegger = function () {
 
 var result = schwarzenegger(1,2,3,3,3);
 console.log(result);  //12
+
+
