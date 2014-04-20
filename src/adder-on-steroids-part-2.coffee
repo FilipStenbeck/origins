@@ -1,16 +1,32 @@
+## A recursive adder
+
+adder = (numbers, acc) ->
+	if numbers?.length
+		head =  numbers.shift(0)
+		adder numbers, acc + head
+	else 
+		acc
+
+console.log  adder([1,2,4,5], 0)
+console.log "------------------"
+
+
+
+## A recursive calculator  
+
 #define calculator functions
 add = (x ,y) -> x + y
 substract = (x ,y) -> x - y
 multiply = (x ,y) -> x * y
 
 #define the calculator
-process = (func, numbers, initial)->
-	result = func initial, numbers.shift(0)  
-	
-	if numbers.length
-		process func, numbers, result
+process = (func, numbers, acc)->
+	if numbers?.length
+		head = numbers.shift(0)   
+		acc = func acc, head 
+		process func, numbers, acc
 	else 
-		result
+		acc
 
 #Using the calculator
 console.log process add, [1, 2, 3, 4, 5], 0   #15 
