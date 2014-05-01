@@ -1,9 +1,5 @@
 var _ = require('lodash');
 
-/*
-* Getting  division names using a functional style 
-*/
-
 function doingItFunctionaly() {
 	var allEvents, clean, fold, groupFromEvent, onlyOne, onlySwedish, result, sortByName, result, leagues;
 
