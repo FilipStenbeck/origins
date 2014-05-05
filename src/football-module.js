@@ -16,9 +16,6 @@ var LeaugeParser = function (json) {
 	* Private functions, hidden but kept in scope by closure
 	*
 	*********************************************************/
-	allEvents = function(data) {
-    	return data;
-  	};
 
 	groupFromEvent = function(data) {
 		return _.map(data, function(event) {
@@ -61,13 +58,13 @@ var LeaugeParser = function (json) {
 	*********************************************************/
 	return {
 		getUnsortedArray : function  (json) {
-			return _.compose(groupFromEvent, allEvents)(json);	
+			return _.compose(groupFromEvent)(json);	
 		},
 		getSortedArray : function  (json) {
-			return _.compose(sortByName,groupFromEvent, allEvents)(json);	
+			return _.compose(sortByName,groupFromEvent)(json);	
 		},
 		getLeagueMessage : function (json) {
-			return _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents)(json);
+			return _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent)(json);
 		},
 		stringify : function (array) {
 			return _.compose(clean, fold)(array);

@@ -1,56 +1,47 @@
-var _ = require('lodash');
+var _ = require('lodash'), data = require("./data/fotboll.json"),
+	allEvents, clean, fold, groupFromEvent, onlyOne, onlySwedish, result, sortByName, result, leagues;
 
-function doingItFunctionaly() {
-	var allEvents, clean, fold, groupFromEvent, onlyOne, onlySwedish, result, sortByName, result, leagues;
+//Declaring functions
+groupFromEvent = function(data) {
+	return _.map(data, function(event) {
+  		return event.league;
+	});
+};
 
-	//Declaring functions
-	allEvents = function(data) {
-    	return data;
-  	};
+onlySwedish = function(data) {
+	return _.filter(data, function(name) {
+  		return name === 'Allsvenskan' || name === 'Superettan' || name === 'Division 1 Norra';
+	});
+};
 
-	groupFromEvent = function(data) {
-		return _.map(data, function(event) {
-	  		return event.league;
-		});
-	};
+onlyOne = function(data) {
+	return _.unique(data);
+};
 
-	onlySwedish = function(data) {
-		return _.filter(data, function(name) {
-	  		return name === 'Allsvenskan' || name === 'Superettan' || name === 'Division 1 Norra';
-		});
-	};
+sortByName = function(data) {
+	return data.sort();
+};
 
-	onlyOne = function(data) {
-		return _.unique(data);
-	};
+fold = function(data) {
+	return _.reduce(data, function(names, name) {
+  		return names + ', ' + name;
+	});
+};
 
-	sortByName = function(data) {
-		return data.sort();
-	};
+clean = function(data) {
+	if (data != null) {
+  		return data.replace(/,([^,]*)$/, " &$1");
+	} else {
+  		return "No Result";
+	}
+};
 
-	fold = function(data) {
-		return _.reduce(data, function(names, name) {
-	  		return names + ', ' + name;
-		});
-	};
+//Composing a function which transform the data
+leagues  = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent);
 
-	clean = function(data) {
-		if (data != null) {
-	  		return data.replace(/,([^,]*)$/, " &$1");
-		} else {
-	  		return "No Result";
-		}
-	};
-
-	//Composing a function which transform the data
-	leagues  = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents);
-
-	//Printing result 
-	result = leagues (require("./data/fotboll.json"));
-	console.log(result)
-}
-
+//Get the result 
+result = leagues(data);
 
 console.log(' \n--------------------------------------------- \n')
-doingItFunctionaly();
+console.log(result)
 console.log(' \n--------------------------------------------- \n')

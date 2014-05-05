@@ -1,8 +1,8 @@
 #Setup lo-dash 
-_ = require("lodash");
+_ = require 'lodash'
+data = require './data/fotboll.json'
 
 #Declaring functions
-allEvents =  (data) ->  data
 
 groupFromEvent = (data) -> _.map data, (event) -> event.league
 
@@ -18,10 +18,10 @@ fold = (data) -> _.reduce data, (names, name) -> names + ', ' + name
 clean = (data) -> if data? then data.replace(/,([^,]*)$/," &$1") else "No Result"
 
 #Composing a function which transform the data
-leagues = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent, allEvents)
+leagues = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent)
 
 #Printing result	
-result = leagues(require ("./data/fotboll.json"));
+result = leagues data
 
 console.log " \n--------------------------------------------- \n"
 console.log result
