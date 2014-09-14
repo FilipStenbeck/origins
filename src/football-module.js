@@ -58,7 +58,7 @@ var LeaugeParser = function (json) {
 	*********************************************************/
 	return {
 		getUnsortedArray : function  (json) {
-			return _.compose(groupFromEvent)(json);	
+			return groupFromEvent(json);	
 		},
 		getSortedArray : function  (json) {
 			return _.compose(sortByName,groupFromEvent)(json);	

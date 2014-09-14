@@ -1,5 +1,7 @@
-var app = {
+module.exports = {
+	
 	data : require('./data/fotboll.json'),
+
 	getMessage : function (sorted, asString, unique, onlySwedish) {
 		var onlyGroupArray = [], divisions ='', found, shouldAdd;
 		for (i = 0; i < this.data.length; i++) {
@@ -33,8 +35,3 @@ var app = {
 		}
 	}
 };
-
-
-console.log(' \n--------------------------------------------- \n')
-console.log (app.getMessage(true, true, true, true));
-console.log(' \n--------------------------------------------- \n')

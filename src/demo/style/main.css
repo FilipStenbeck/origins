@@ -1,0 +1,30 @@
+body {
+  background: white;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+img {
+	border-radius: 30px;
+	margin-left: 40px;
+}
+
+h1 {
+	font-family: 'Gochi Hand', cursive;
+	font-size: 36px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  overflow: auto;
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  img {
+    width: 70%;
+  }
+}

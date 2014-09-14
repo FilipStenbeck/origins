@@ -1,6 +1,5 @@
 #Setup lo-dash 
 _ = require 'lodash'
-data = require './data/fotboll.json'
 
 #Declaring functions
 
@@ -18,11 +17,4 @@ fold = (data) -> _.reduce data, (names, name) -> names + ', ' + name
 clean = (data) -> if data? then data.replace(/,([^,]*)$/," &$1") else "No Result"
 
 #Composing a function which transform the data
-leagues = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent)
-
-#Printing result	
-result = leagues data
-
-console.log " \n--------------------------------------------- \n"
-console.log result
-console.log " \n--------------------------------------------- \n"
+module.exports = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent)
