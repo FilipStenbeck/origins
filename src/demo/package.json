@@ -2,11 +2,12 @@
   "name": "football",
   "version": "0.0.1",
   "description": "Showing diffrense between imperative and functional style",
-  "main": "football.js",
+  "main": "server.js",
   "author": "Filip Stenbeck",
   "license": "MIT",
   "dependencies": {
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "express": "~4.9.0"
   },
   "devDependencies": {
     "coffee-script": "~1.7.1"
