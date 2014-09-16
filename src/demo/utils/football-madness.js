@@ -1,6 +1,6 @@
 module.exports = {
 	
-	data : require('./data/fotboll.json'),
+	data : require('../data/fotboll.json'),
 
 	getMessage : function (sorted, asString, unique, onlySwedish) {
 		var onlyGroupArray = [], divisions ='', found, shouldAdd;

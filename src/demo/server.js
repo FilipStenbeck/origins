@@ -1,6 +1,6 @@
  var express = require("express");
- var functional = require("./football-coffee");
- var imperative = require("./football-madness");
+ var functional = require("./utils/football-coffee");
+ var imperative = require("./utils/football-madness");
  
  var data = require('./data/fotboll.json');
  var app = express();
