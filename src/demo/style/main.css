@@ -41,12 +41,35 @@ h1 {
   margin-right :5%; 
 }
 
-.main {
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
   resize: both;
   overflow: auto;
+}
+
+hit-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  overflow: auto;
+  font-family: 'Gochi Hand', cursive;
+}
+
+hit-counter h3 {
+  border: 3px #686257 dotted;
+  padding: 12px;
+  border-radius: 30px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 22px;
+  color: #686257;
+}
+
+#construction {
+  margin-top : 800px;
+  width: 60%;
 }
 
 @media (max-width: 636px) {
@@ -65,5 +88,8 @@ h1 {
   }
   .menu {
     font-size: 16px;  
+  }
+  hit-counter {
+    display: none;
   }
 }
