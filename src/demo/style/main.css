@@ -80,6 +80,9 @@ hit-counter h3 {
     font-size: 26px;
     margin-left: 36px;
   }
+  #construction {
+    height: 48px;
+  }
 }
 
 @media (max-width: 460px) {
@@ -88,6 +91,9 @@ hit-counter h3 {
   }
   .menu {
     font-size: 16px;  
+  }
+  #construction {
+    height: 48px;
   }
   hit-counter {
     display: none;

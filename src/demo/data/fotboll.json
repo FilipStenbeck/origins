@@ -25,15 +25,15 @@
       "league": "Allsvenskan"
 	},
 	{
-	  "home": "FF Jaro",
-	  "away": "MyPa ",
-	  "start": "2014-06-25T15:30Z",
-	  "league": "Veikkausliiga"
-	},
-	{
 	  "home": "Dalkurd FF",
 	  "away": "Väsby United",
 	  "start": "2014-06-25T17:00Z",
 	  "league": "Division 1 Norra"
+	},
+	{
+	  "home": "Arsenal",
+	  "away": "Manchester United",
+	  "start": "2014-07-25T17:00Z",
+	  "league": "Premier League"
 	}
  ]
