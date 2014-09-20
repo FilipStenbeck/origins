@@ -2,7 +2,6 @@
 _ = require 'lodash'
 
 #Declaring functions
-
 groupFromEvent = (data) -> _.map data, (event) -> event.league
 
 onlySwedish = (data) -> _.filter data, (name) -> 
@@ -16,5 +15,11 @@ fold = (data) -> _.reduce data, (names, name) -> names + ', ' + name
 
 clean = (data) -> if data? then data.replace(/,([^,]*)$/," &$1") else "No Result"
 
-#Composing a function which transform the data
-module.exports = _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent)
+#Exposing compositions a functions which transforms the data
+module.exports = 
+	swedish : _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent)
+	all : _.compose(clean, fold, sortByName, onlyOne, groupFromEvent)
+	raw : _.compose(groupFromEvent)
+
+
+

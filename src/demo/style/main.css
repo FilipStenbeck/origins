@@ -15,7 +15,7 @@ h1 {
 	font-size: 36px;
 }
 
-.container {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,8 +24,46 @@ h1 {
   margin-top: 30px;
 }
 
-@media (max-width: 600px) {
+.menu {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 26px;
+  border-bottom: 1px solid #D7D5CC;
+  padding-bottom: 20px;
+  margin-top: -10px;
+}
+
+.menu a {
+  margin-left :5%;
+}
+
+.menu a:last-child {
+  float:right; 
+  margin-right :5%; 
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  overflow: auto;
+}
+
+@media (max-width: 636px) {
   img {
     width: 70%;
+  }
+  h1 {
+    font-size: 26px;
+    margin-left: 36px;
+  }
+}
+
+@media (max-width: 460px) {
+  h1 {
+    font-size: 26px;
+  }
+  .menu {
+    font-size: 16px;  
   }
 }

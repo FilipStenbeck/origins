@@ -13,8 +13,16 @@
 
 /* serves the api */
  
- app.get("/api/leagues", function(req, res) {
-   res.send(functional(data))
+ app.get("/api/leagues/se", function(req, res) {
+   res.send(functional.swedish(data));
+ });
+
+ app.get("/api/leagues/all", function(req, res) {
+   res.send(functional.all(data));
+ });
+
+ app.get("/api/leagues/raw", function(req, res) {
+ 	res.send(functional.raw(data));
  });
 
  app.get("/api/imperative", function(req, res) {
