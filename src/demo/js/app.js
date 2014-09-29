@@ -1,4 +1,4 @@
-require('./routers/routers');
+require('./routers/approuter');
 require('./controllers');
 require('./directives');
 require('./services');

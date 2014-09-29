@@ -22964,7 +22964,7 @@ var styleDirective = valueFn({
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],"/home/filip/workspace/origins/src/demo/js/app.js":[function(require,module,exports){
-require('./routers/routers');
+require('./routers/approuter');
 require('./controllers');
 require('./directives');
 require('./services');
@@ -22974,13 +22974,11 @@ require('./services')
 
 
 
-},{"./controllers":"/home/filip/workspace/origins/src/demo/js/controllers/index.js","./directives":"/home/filip/workspace/origins/src/demo/js/directives/index.js","./routers/routers":"/home/filip/workspace/origins/src/demo/js/routers/routers.js","./services":"/home/filip/workspace/origins/src/demo/js/services/index.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/allCtrl.js":[function(require,module,exports){
+},{"./controllers":"/home/filip/workspace/origins/src/demo/js/controllers/index.js","./directives":"/home/filip/workspace/origins/src/demo/js/directives/index.js","./routers/approuter":"/home/filip/workspace/origins/src/demo/js/routers/approuter.js","./services":"/home/filip/workspace/origins/src/demo/js/services/index.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/allCtrl.js":[function(require,module,exports){
 require('angular').module('demo').controller('AllCtrl', function ($scope, leaugeService) {
 	leaugeService.getAll(function(data) {
 		$scope.message = data;
 	})
-	$scope.showMe = true;
-
 });
 },{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/index.js":[function(require,module,exports){
 require('./allCtrl');
@@ -22992,14 +22990,12 @@ require('angular').module('demo').controller('RawCtrl', function ($scope, leauge
 	leaugeService.getRaw(function(data) {
 		$scope.message = data;
 	})
-	$scope.showMe = true;
 });
 },{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/swedishCtrl.js":[function(require,module,exports){
 require('angular').module('demo').controller('SwedishCtrl', function ($scope, leaugeService) {
 	leaugeService.getSwedish(function(data) {
 		$scope.message = data;
 	});
-	$scope.showMe = true;
 });
 },{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/directives/hitCounter.js":[function(require,module,exports){
 require('angular').module('demo').directive("hitCounter", function ($http) {
@@ -23011,7 +23007,7 @@ require('angular').module('demo').directive("hitCounter", function ($http) {
             url : 'http://localhost:9000/api/counter',
         	}).success(function (data) {
             	var counter = document.createElement("h3");
-            	counter.textContent =  "Number of visits: " + data //attributes.messsage;
+            	counter.textContent =  "Number of visits: " + data;
             	element[0].appendChild(counter);
     		});
         }
@@ -23020,7 +23016,7 @@ require('angular').module('demo').directive("hitCounter", function ($http) {
 },{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/directives/index.js":[function(require,module,exports){
 require('./hitCounter');
 
-},{"./hitCounter":"/home/filip/workspace/origins/src/demo/js/directives/hitCounter.js"}],"/home/filip/workspace/origins/src/demo/js/routers/routers.js":[function(require,module,exports){
+},{"./hitCounter":"/home/filip/workspace/origins/src/demo/js/directives/hitCounter.js"}],"/home/filip/workspace/origins/src/demo/js/routers/approuter.js":[function(require,module,exports){
 'use strict';
 
 require('angular');

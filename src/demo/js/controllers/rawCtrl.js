@@ -2,5 +2,4 @@ require('angular').module('demo').controller('RawCtrl', function ($scope, leauge
 	leaugeService.getRaw(function(data) {
 		$scope.message = data;
 	})
-	$scope.showMe = true;
 });

@@ -7,7 +7,7 @@ require('angular').module('demo').directive("hitCounter", function ($http) {
             url : 'http://localhost:9000/api/counter',
         	}).success(function (data) {
             	var counter = document.createElement("h3");
-            	counter.textContent =  "Number of visits: " + data //attributes.messsage;
+            	counter.textContent =  "Number of visits: " + data;
             	element[0].appendChild(counter);
     		});
         }

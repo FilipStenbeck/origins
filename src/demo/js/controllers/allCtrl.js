@@ -2,6 +2,4 @@ require('angular').module('demo').controller('AllCtrl', function ($scope, leauge
 	leaugeService.getAll(function(data) {
 		$scope.message = data;
 	})
-	$scope.showMe = true;
-
 });

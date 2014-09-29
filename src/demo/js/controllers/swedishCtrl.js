@@ -2,5 +2,4 @@ require('angular').module('demo').controller('SwedishCtrl', function ($scope, le
 	leaugeService.getSwedish(function(data) {
 		$scope.message = data;
 	});
-	$scope.showMe = true;
 });
