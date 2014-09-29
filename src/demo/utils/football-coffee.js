@@ -41,7 +41,13 @@
   module.exports = {
     swedish: _.compose(clean, fold, sortByName, onlyOne, onlySwedish, groupFromEvent),
     all: _.compose(clean, fold, sortByName, onlyOne, groupFromEvent),
-    raw: _.compose(groupFromEvent)
+    raw: _.compose(groupFromEvent),
+    groupFromEvent: groupFromEvent,
+    onlySwedish: onlySwedish,
+    onlyOne: onlyOne,
+    sortByName: sortByName,
+    fold: fold,
+    clean: clean
   };
 
 }).call(this);

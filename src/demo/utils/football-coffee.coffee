@@ -21,5 +21,13 @@ module.exports =
 	all : _.compose(clean, fold, sortByName, onlyOne, groupFromEvent)
 	raw : _.compose(groupFromEvent)
 
+	#All function to expose them for tests
+	groupFromEvent : groupFromEvent
+	onlySwedish : onlySwedish
+	onlyOne : onlyOne
+	sortByName : sortByName
+	fold : fold
+	clean : clean	
+
 
 
