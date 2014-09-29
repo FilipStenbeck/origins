@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/home/filip/workspace/origins/src/demo/node_modules/lodash/dist/lodash.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"c:\\Users\\feilste\\workspace\\origins\\src\\demo\\node_modules\\lodash\\dist\\lodash.js":[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -6787,40 +6787,42 @@
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/home/filip/workspace/origins/src/demo/test/spec/FootballSpec.js":[function(require,module,exports){
+},{}],"c:\\Users\\feilste\\workspace\\origins\\src\\demo\\test\\spec\\FootballSpec.js":[function(require,module,exports){
 describe("Football util", function() {
 
-	var footballUtil = require('../../utils/football-coffee.js');
-	var data = [{
-  		"home": "Djurgården",
-      	"away": "IFK Göteborg",
-      	"start": "2014-03-12T16:00Z",
-      	"league": "Allsvenskan"
-	},
-	{
-  		"home": "Dalkurd FF",
-  		"away": "Väsby United",
-  		"start": "2014-06-25T17:00Z",
-  		"league": "Division 1 Norra"
-	},
-	{
-  		"home": "Arsenal",
-  		"away": "Manchester United",
-  		"start": "2014-07-25T17:00Z",
-  		"league": "Premier League"
-	}];
+    var footballUtil = require('../../utils/football-coffee.js');
+    var data = [{
+        "home": "Djurgården",
+          "away": "IFK Göteborg",
+          "start": "2014-03-12T16:00Z",
+          "league": "Allsvenskan"
+    },
+    {
+        "home": "Dalkurd FF",
+        "away": "Väsby United",
+        "start": "2014-06-25T17:00Z",
+        "league": "Division 1 Norra"
+    },
+    {
+        "home": "Arsenal",
+        "away": "Manchester United",
+        "start": "2014-07-25T17:00Z",
+        "league": "Premier League"
+    }];
 
-	it("should get leagues from matches", function() {
-    	expect(footballUtil.groupFromEvent(data)).toEqual(["Allsvenskan", "Division 1 Norra", "Premier League"]);
-  	});
+  describe("Football util functions", function() {
 
-  	it("should get only Swedish", function() {
-  		var leauges = ["Allsvenskan", "Division 1 Norra", "Premier League"];
-    	expect(footballUtil.onlySwedish(leauges)).toEqual(["Allsvenskan", "Division 1 Norra"]);
-  	});
+  	it("should get leagues from matches", function() {
+      expect(footballUtil.groupFromEvent(data)).toEqual(["Allsvenskan", "Division 1 Norra", "Premier League"]);
+    });
 
-  	it("should only show one of each", function() {
-  		var leauges = ["Allsvenskan", "Division 1 Norra", "Allsvenskan"];
+    it("should get only Swedish", function() {
+      var leauges = ["Allsvenskan", "Division 1 Norra", "Premier League"];
+      expect(footballUtil.onlySwedish(leauges)).toEqual(["Allsvenskan", "Division 1 Norra"]);
+    });
+
+    it("should only show one of each", function() {
+      var leauges = ["Allsvenskan", "Division 1 Norra", "Allsvenskan"];
     	expect(footballUtil.onlyOne(leauges)).toEqual(["Allsvenskan", "Division 1 Norra"]);
   	});
 
@@ -6834,12 +6836,28 @@ describe("Football util", function() {
     	expect(footballUtil.fold(leauges)).toEqual("Division 1 Norra, Allsvenskan");
   	});
 
-  	it("should produce pretty messages", function() {
+  	it("should produce messages with comma and one & before last entry", function() {
   		var leauges = "Division 1 Norra, Allsvenskan";
     	expect(footballUtil.clean(leauges)).toEqual("Division 1 Norra & Allsvenskan");
   	});
+  });
+
+  describe("Football util public functions", function() {
+
+    it("should make nice only Swedish league messages", function() {
+      expect(footballUtil.swedish(data)).toEqual("Allsvenskan & Division 1 Norra");
+    });
+
+    it("should make nice league messages", function() {
+      expect(footballUtil.all(data)).toEqual("Allsvenskan, Division 1 Norra & Premier League");
+    });
+
+    it("should handle empty league arrays", function() {
+      expect(footballUtil.swedish([])).toEqual("No Result");
+    });      
+  });
 });
-},{"../../utils/football-coffee.js":"/home/filip/workspace/origins/src/demo/utils/football-coffee.js"}],"/home/filip/workspace/origins/src/demo/utils/football-coffee.js":[function(require,module,exports){
+},{"../../utils/football-coffee.js":"c:\\Users\\feilste\\workspace\\origins\\src\\demo\\utils\\football-coffee.js"}],"c:\\Users\\feilste\\workspace\\origins\\src\\demo\\utils\\football-coffee.js":[function(require,module,exports){
 // Generated by CoffeeScript 1.7.1
 (function() {
   var clean, fold, groupFromEvent, onlyOne, onlySwedish, sortByName, _;
@@ -6894,4 +6912,4 @@ describe("Football util", function() {
 
 }).call(this);
 
-},{"lodash":"/home/filip/workspace/origins/src/demo/node_modules/lodash/dist/lodash.js"}]},{},["/home/filip/workspace/origins/src/demo/test/spec/FootballSpec.js"]);
+},{"lodash":"c:\\Users\\feilste\\workspace\\origins\\src\\demo\\node_modules\\lodash\\dist\\lodash.js"}]},{},["c:\\Users\\feilste\\workspace\\origins\\src\\demo\\test\\spec\\FootballSpec.js"]);
