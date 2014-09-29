@@ -22964,13 +22964,6 @@ var styleDirective = valueFn({
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],"/home/filip/workspace/origins/src/demo/js/app.js":[function(require,module,exports){
-'use strict';
-
-//AngularJS dependecies
-angular = require('angular');
-require('angular-route');
-
-//App code
 require('./routers/routers');
 require('./controllers');
 require('./directives');
@@ -22981,7 +22974,7 @@ require('./services')
 
 
 
-},{"./controllers":"/home/filip/workspace/origins/src/demo/js/controllers/index.js","./directives":"/home/filip/workspace/origins/src/demo/js/directives/index.js","./routers/routers":"/home/filip/workspace/origins/src/demo/js/routers/routers.js","./services":"/home/filip/workspace/origins/src/demo/js/services/index.js","angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js","angular-route":"/home/filip/workspace/origins/src/demo/bower_components/angular-route/angular-route.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/allCtrl.js":[function(require,module,exports){
+},{"./controllers":"/home/filip/workspace/origins/src/demo/js/controllers/index.js","./directives":"/home/filip/workspace/origins/src/demo/js/directives/index.js","./routers/routers":"/home/filip/workspace/origins/src/demo/js/routers/routers.js","./services":"/home/filip/workspace/origins/src/demo/js/services/index.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/allCtrl.js":[function(require,module,exports){
 require('angular').module('demo').controller('AllCtrl', function ($scope, leaugeService) {
 	leaugeService.getAll(function(data) {
 		$scope.message = data;
@@ -23030,6 +23023,7 @@ require('./hitCounter');
 },{"./hitCounter":"/home/filip/workspace/origins/src/demo/js/directives/hitCounter.js"}],"/home/filip/workspace/origins/src/demo/js/routers/routers.js":[function(require,module,exports){
 'use strict';
 
+require('angular');
 require('angular-route');
 
 require('angular').module('demo', ['ngRoute']).config(function ($routeProvider) {
