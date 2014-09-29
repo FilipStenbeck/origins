@@ -1,0 +1,16 @@
+Project info
+=============
+Small demo to show what you can gain by adopting a more functional style of programming javascript.
+Backend uses node.js and frontend is build on AngularJS
+
+
+Browserify
+=============
+Project needs browserify to be built see http://browserify.org/
+
+Build with command
+--------------------------
+browserify ./js/app.js -o ./build/browserify-bundle.js
+or
+watchify ./js/app.js -o ./build/browserify-bundle.js
+

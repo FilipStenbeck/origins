@@ -7,9 +7,22 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "~2.4.1",
-    "express": "~4.9.0"
+    "express": "~4.9.0",
+    "browserify": "~5.12.1",
+    "browserify-shim": "~3.7.0"
   },
   "devDependencies": {
     "coffee-script": "~1.7.1"
+  },
+  "browser": {
+    "angular": "./bower_components/angular/angular.js",
+    "angular-route": "./bower_components/angular-route/angular-route.js"
+  },
+  "browserify": {
+    "transform": "browserify-shim"
+  },
+  "browserify-shim": {
+    "angular": "angular",
+    "angular-route": "route"
   }
 }
