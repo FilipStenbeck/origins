@@ -1,5 +1,4 @@
-describe("Football util", function() {
-
+describe("Backend", function() {
     var footballUtil = require('../../utils/football-coffee.js');
     var data = [{
         "home": "Djurgården",

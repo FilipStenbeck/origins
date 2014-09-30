@@ -3,7 +3,7 @@
 require('angular');
 require('angular-route');
 
-require('angular').module('demo', ['ngRoute']).config(function ($routeProvider) {
+require('angular').module('demo').config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'main.html',

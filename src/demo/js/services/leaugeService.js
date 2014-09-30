@@ -23,6 +23,10 @@ require('angular').module('demo').factory('leaugeService', function ($http) {
 
         getRaw : function (callback) {
             callServer(ROOT_URL + 'raw', callback);  
+        },
+        
+        getMockData : function () {
+            return "Allsvenskan, Division 1 Norra & Premier League";
         }
     };
 });
