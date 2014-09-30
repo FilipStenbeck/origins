@@ -23031,15 +23031,15 @@ require('angular-route');
 require('angular').module('demo').config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'main.html',
+        templateUrl: 'templates/main.html',
         controller: 'SwedishCtrl'
       })
       .when('/all', {
-        templateUrl: 'main.html',
+        templateUrl: 'templates/main.html',
         controller: 'AllCtrl'
       })
       .when('/raw', {
-        templateUrl: 'main.html',
+        templateUrl: 'templates/main.html',
         controller: 'RawCtrl'
       })
       .otherwise({
