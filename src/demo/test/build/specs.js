@@ -32125,6 +32125,8 @@ require('angular-mocks');
 
 require('../../js/app');
 
+var BACKEND_URL = "http://localhost:9000";
+
 describe("Frontend", function() {
  
     beforeEach(window.angular.mock.module("demo"))
@@ -32132,7 +32134,8 @@ describe("Frontend", function() {
   	describe("Controllers", function() {
 
     	describe("AllCtrl", function() {
-		    it("should have a default message for no leauges found", inject(function($rootScope, $controller){
+
+		    it("should show a default message when no leauges found", inject(function($rootScope, $controller){
 		    	var ctrl, scope = $rootScope.$new();
 		    	ctrl = $controller("AllCtrl", { $scope: scope });
 		       	expect(scope.message).toEqual("No leauges found");
@@ -32140,27 +32143,42 @@ describe("Frontend", function() {
 		});
 
 		describe("SwedishCtrl", function() {
-		    it("should have a default message for no leauges found", inject(function($rootScope, $controller){
+
+		    it("should show a default message when no leauges found", inject(function($rootScope, $controller){
 		    	var ctrl, scope = $rootScope.$new();
 		    	ctrl = $controller("SwedishCtrl", { $scope: scope });
 		       	expect(scope.message).toEqual("No Swedish leauges found");
 		    }));
-		});
 
+		     it("should update the message when recieved data from the server", inject(function($rootScope, $controller, $httpBackend){
+		    	var ctrl, scope = $rootScope.$new(), msg = "Allsvenskan & Division 1" ;
+        		
+		    	ctrl = $controller("SwedishCtrl", { $scope: scope });
+        		$httpBackend.when("GET", BACKEND_URL + "/api/leagues/se").respond(msg);
+		       	
+		       	//Before getting data from server
+		       	expect(scope.message).toEqual("No Swedish leauges found");
+		       	
+		       	$httpBackend.flush();
+		       	
+		       	//After data from server
+		       	expect(scope.message).toEqual(msg);
+		    }));
+		});
 	});
 
 	describe("Services", function() {
 		describe("LeaugeService", function() {
 	    	var $injector = angular.injector([ 'demo' ]);
         	var leaugeService = $injector.get( 'leaugeService' );
-
-		    it("should have a functions for getting data", function(){
+   
+		    it("should have functions for getting data", function(){
 		    	expect(typeof leaugeService.getAll).toEqual('function');
 		    	expect(typeof leaugeService.getSwedish).toEqual('function');
 		    	expect(typeof leaugeService.getRaw).toEqual('function');
 		    });
 
-		    it("should get mock data", function(){
+		    it("should expose a method that return mock data", function(){
 		    	expect(leaugeService.getMockData()).toEqual('Allsvenskan, Division 1 Norra & Premier League');
 		    });
 		});

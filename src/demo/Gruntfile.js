@@ -19,7 +19,7 @@ module.exports = function (grunt) {
 
 		watch: {
 	  		scripts: {
-	    		files: ['**/*.js'],
+	    		files: ['js/**/*.js', 'test/spec/**/*.js'],
 	    		tasks: ['browserify'],
 	    			options: {
 	      			spawn: false,
@@ -42,7 +42,6 @@ module.exports = function (grunt) {
           options: {
               port: 9001,
               livereload: 35729,
-              // change this to '0.0.0.0' to access the server from outside
               hostname: 'localhost'
           },
           livereload: {
