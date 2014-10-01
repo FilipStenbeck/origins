@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/home/filip/workspace/origins/src/demo/bower_components/angular-route/angular-route.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /**
@@ -931,7 +931,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js":[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /**
@@ -22963,7 +22963,7 @@ var styleDirective = valueFn({
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/home/filip/workspace/origins/src/demo/js/app.js":[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 require('angular').module('demo', ['ngRoute']);
 require('./routers/approuter');
 require('./controllers');
@@ -22974,7 +22974,7 @@ require('./services');
 
 
 
-},{"./controllers":"/home/filip/workspace/origins/src/demo/js/controllers/index.js","./directives":"/home/filip/workspace/origins/src/demo/js/directives/index.js","./routers/approuter":"/home/filip/workspace/origins/src/demo/js/routers/approuter.js","./services":"/home/filip/workspace/origins/src/demo/js/services/index.js","angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/allCtrl.js":[function(require,module,exports){
+},{"./controllers":5,"./directives":9,"./routers/approuter":10,"./services":11,"angular":2}],4:[function(require,module,exports){
 require('angular').module('demo').controller('AllCtrl', function ($scope, leaugeService) {
 	
 	$scope.message = "No leauges found";
@@ -22983,18 +22983,18 @@ require('angular').module('demo').controller('AllCtrl', function ($scope, leauge
 		$scope.message = data;
 	})
 });
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/index.js":[function(require,module,exports){
+},{"angular":2}],5:[function(require,module,exports){
 require('./allCtrl');
 require('./rawCtrl');
 require('./swedishCtrl');
 
-},{"./allCtrl":"/home/filip/workspace/origins/src/demo/js/controllers/allCtrl.js","./rawCtrl":"/home/filip/workspace/origins/src/demo/js/controllers/rawCtrl.js","./swedishCtrl":"/home/filip/workspace/origins/src/demo/js/controllers/swedishCtrl.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/rawCtrl.js":[function(require,module,exports){
+},{"./allCtrl":4,"./rawCtrl":6,"./swedishCtrl":7}],6:[function(require,module,exports){
 require('angular').module('demo').controller('RawCtrl', function ($scope, leaugeService) {
 	leaugeService.getRaw(function(data) {
 		$scope.message = data;
 	})
 });
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/swedishCtrl.js":[function(require,module,exports){
+},{"angular":2}],7:[function(require,module,exports){
 require('angular').module('demo').controller('SwedishCtrl', function ($scope, leaugeService) {
 	
 	$scope.message = "No Swedish leauges found";
@@ -23003,7 +23003,7 @@ require('angular').module('demo').controller('SwedishCtrl', function ($scope, le
 		$scope.message = data;
 	});
 });
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/directives/hitCounter.js":[function(require,module,exports){
+},{"angular":2}],8:[function(require,module,exports){
 require('angular').module('demo').directive("hitCounter", function ($http) {
    return {
         restrict: "E",
@@ -23019,10 +23019,10 @@ require('angular').module('demo').directive("hitCounter", function ($http) {
         }
     };
 });
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/directives/index.js":[function(require,module,exports){
+},{"angular":2}],9:[function(require,module,exports){
 require('./hitCounter');
 
-},{"./hitCounter":"/home/filip/workspace/origins/src/demo/js/directives/hitCounter.js"}],"/home/filip/workspace/origins/src/demo/js/routers/approuter.js":[function(require,module,exports){
+},{"./hitCounter":8}],10:[function(require,module,exports){
 'use strict';
 
 require('angular');
@@ -23031,15 +23031,15 @@ require('angular-route');
 require('angular').module('demo').config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'main.html',
+        templateUrl: 'templates/main.html',
         controller: 'SwedishCtrl'
       })
       .when('/all', {
-        templateUrl: 'main.html',
+        templateUrl: 'templates/main.html',
         controller: 'AllCtrl'
       })
       .when('/raw', {
-        templateUrl: 'main.html',
+        templateUrl: 'templates/main.html',
         controller: 'RawCtrl'
       })
       .otherwise({
@@ -23047,10 +23047,10 @@ require('angular').module('demo').config(function ($routeProvider) {
       });
   });
 
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js","angular-route":"/home/filip/workspace/origins/src/demo/bower_components/angular-route/angular-route.js"}],"/home/filip/workspace/origins/src/demo/js/services/index.js":[function(require,module,exports){
+},{"angular":2,"angular-route":1}],11:[function(require,module,exports){
 require('./leaugeService');
 
-},{"./leaugeService":"/home/filip/workspace/origins/src/demo/js/services/leaugeService.js"}],"/home/filip/workspace/origins/src/demo/js/services/leaugeService.js":[function(require,module,exports){
+},{"./leaugeService":12}],12:[function(require,module,exports){
 require('angular').module('demo').factory('leaugeService', function ($http) {
 
    var ROOT_URL = 'http://localhost:9000/api/leagues/';
@@ -23083,9 +23083,9 @@ require('angular').module('demo').factory('leaugeService', function ($http) {
         }
     };
 });
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/node_modules/angular-mocks/angular-mocks.js":[function(require,module,exports){
+},{"angular":2}],13:[function(require,module,exports){
 /**
- * @license AngularJS v1.2.22
+ * @license AngularJS v1.2.25
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -23148,6 +23148,8 @@ angular.mock.$Browser = function() {
 
     return listener;
   };
+
+  self.$$checkUrlChange = angular.noop;
 
   self.cookieHash = {};
   self.lastCookieHash = {};
@@ -23974,7 +23976,7 @@ angular.mock.dump = function(object) {
  * development please see {@link ngMockE2E.$httpBackend e2e $httpBackend mock}.
  *
  * During unit testing, we want our unit tests to run quickly and have no external dependencies so
- * we donâ€™t want to send [XHR](https://developer.mozilla.org/en/xmlhttprequest) or
+ * we don’t want to send [XHR](https://developer.mozilla.org/en/xmlhttprequest) or
  * [JSONP](http://en.wikipedia.org/wiki/JSONP) requests to a real server. All we really need is
  * to verify whether a certain request has been sent or not, or alternatively just let the
  * application make requests, respond with pre-trained responses and assert that the end result is
@@ -24129,7 +24131,7 @@ angular.mock.dump = function(object) {
          var controller = createController();
          $httpBackend.flush();
 
-         // now you donâ€™t care about the authentication, but
+         // now you don’t care about the authentication, but
          // the controller will still send the request and
          // $httpBackend will respond without you having to
          // specify the expectation and response for this request
@@ -24280,10 +24282,10 @@ function createHttpBackendMock($rootScope, $delegate, $browser) {
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled.
    *
-   *  - respond â€“
+   *  - respond –
    *      `{function([status,] data[, headers, statusText])
    *      | function(function(method, url, data, headers)}`
-   *    â€“ The respond method takes a set of static data to be returned or a function that can
+   *    – The respond method takes a set of static data to be returned or a function that can
    *    return an array containing response status (number), response data (string), response
    *    headers (Object), and the text for the status (string).
    */
@@ -24398,10 +24400,10 @@ function createHttpBackendMock($rootScope, $delegate, $browser) {
    * @returns {requestHandler} Returns an object with `respond` method that control how a matched
    *  request is handled.
    *
-   *  - respond â€“
+   *  - respond –
    *    `{function([status,] data[, headers, statusText])
    *    | function(function(method, url, data, headers)}`
-   *    â€“ The respond method takes a set of static data to be returned or a function that can
+   *    – The respond method takes a set of static data to be returned or a function that can
    *    return an array containing response status (number), response data (string), response
    *    headers (Object), and the text for the status (string).
    */
@@ -24915,13 +24917,13 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled.
  *
- *  - respond â€“
+ *  - respond –
  *    `{function([status,] data[, headers, statusText])
  *    | function(function(method, url, data, headers)}`
- *    â€“ The respond method takes a set of static data to be returned or a function that can return
+ *    – The respond method takes a set of static data to be returned or a function that can return
  *    an array containing response status (number), response data (string), response headers
  *    (Object), and the text for the status (string).
- *  - passThrough â€“ `{function()}` â€“ Any request matching a backend definition with
+ *  - passThrough – `{function()}` – Any request matching a backend definition with
  *    `passThrough` handler will be passed through to the real backend (an XHR request will be made
  *    to the server.)
  */
@@ -25089,6 +25091,7 @@ if(window.jasmine || window.mocha) {
    * @description
    *
    * *NOTE*: This function is also published on window for easy access.<br>
+   * *NOTE*: This function is declared ONLY WHEN running tests with jasmine or mocha
    *
    * This function registers a module configuration code. It collects the configuration information
    * which will be used when the injector is created by {@link angular.mock.inject inject}.
@@ -25131,6 +25134,7 @@ if(window.jasmine || window.mocha) {
    * @description
    *
    * *NOTE*: This function is also published on window for easy access.<br>
+   * *NOTE*: This function is declared ONLY WHEN running tests with jasmine or mocha
    *
    * The inject function wraps a function into an injectable function. The inject() creates new
    * instance of {@link auto.$injector $injector} per test, which is then used for
@@ -25257,7 +25261,7 @@ if(window.jasmine || window.mocha) {
 
 
 })(window, window.angular);
-},{}],"/home/filip/workspace/origins/src/demo/node_modules/lodash/dist/lodash.js":[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -32046,7 +32050,7 @@ if(window.jasmine || window.mocha) {
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/home/filip/workspace/origins/src/demo/test/spec/FootballSpec.js":[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 describe("Backend", function() {
     var footballUtil = require('../../utils/football-coffee.js');
     var data = [{
@@ -32115,14 +32119,14 @@ describe("Backend", function() {
     });      
   });
 });
-},{"../../utils/football-coffee.js":"/home/filip/workspace/origins/src/demo/utils/football-coffee.js"}],"/home/filip/workspace/origins/src/demo/test/spec/FrontendSpec.js":[function(require,module,exports){
+},{"../../utils/football-coffee.js":18}],16:[function(require,module,exports){
 require('angular');
 require('angular-mocks');
 
 require('../../js/app');
 
 describe("Frontend", function() {
-
+ 
     beforeEach(window.angular.mock.module("demo"))
   	
   	describe("Controllers", function() {
@@ -32132,7 +32136,7 @@ describe("Frontend", function() {
 		    	var ctrl, scope = $rootScope.$new();
 		    	ctrl = $controller("AllCtrl", { $scope: scope });
 		       	expect(scope.message).toEqual("No leauges found");
-		    }));
+		    })); 
 		});
 
 		describe("SwedishCtrl", function() {
@@ -32162,11 +32166,11 @@ describe("Frontend", function() {
 		});
 	});
 });
-},{"../../js/app":"/home/filip/workspace/origins/src/demo/js/app.js","angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js","angular-mocks":"/home/filip/workspace/origins/src/demo/node_modules/angular-mocks/angular-mocks.js"}],"/home/filip/workspace/origins/src/demo/test/spec/index.js":[function(require,module,exports){
+},{"../../js/app":3,"angular":2,"angular-mocks":13}],17:[function(require,module,exports){
 require('./FootballSpec.js');
 require('./FrontendSpec.js');
 
-},{"./FootballSpec.js":"/home/filip/workspace/origins/src/demo/test/spec/FootballSpec.js","./FrontendSpec.js":"/home/filip/workspace/origins/src/demo/test/spec/FrontendSpec.js"}],"/home/filip/workspace/origins/src/demo/utils/football-coffee.js":[function(require,module,exports){
+},{"./FootballSpec.js":15,"./FrontendSpec.js":16}],18:[function(require,module,exports){
 // Generated by CoffeeScript 1.7.1
 (function() {
   var clean, fold, groupFromEvent, onlyOne, onlySwedish, sortByName, _;
@@ -32221,4 +32225,4 @@ require('./FrontendSpec.js');
 
 }).call(this);
 
-},{"lodash":"/home/filip/workspace/origins/src/demo/node_modules/lodash/dist/lodash.js"}]},{},["/home/filip/workspace/origins/src/demo/test/spec/index.js"]);
+},{"lodash":14}]},{},[17]);

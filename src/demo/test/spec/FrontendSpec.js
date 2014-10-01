@@ -4,7 +4,7 @@ require('angular-mocks');
 require('../../js/app');
 
 describe("Frontend", function() {
-
+ 
     beforeEach(window.angular.mock.module("demo"))
   	
   	describe("Controllers", function() {
@@ -14,7 +14,7 @@ describe("Frontend", function() {
 		    	var ctrl, scope = $rootScope.$new();
 		    	ctrl = $controller("AllCtrl", { $scope: scope });
 		       	expect(scope.message).toEqual("No leauges found");
-		    }));
+		    })); 
 		});
 
 		describe("SwedishCtrl", function() {

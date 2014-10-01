@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/home/filip/workspace/origins/src/demo/bower_components/angular-route/angular-route.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /**
@@ -931,7 +931,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js":[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /**
@@ -22963,7 +22963,7 @@ var styleDirective = valueFn({
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/home/filip/workspace/origins/src/demo/js/app.js":[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 require('angular').module('demo', ['ngRoute']);
 require('./routers/approuter');
 require('./controllers');
@@ -22974,7 +22974,7 @@ require('./services');
 
 
 
-},{"./controllers":"/home/filip/workspace/origins/src/demo/js/controllers/index.js","./directives":"/home/filip/workspace/origins/src/demo/js/directives/index.js","./routers/approuter":"/home/filip/workspace/origins/src/demo/js/routers/approuter.js","./services":"/home/filip/workspace/origins/src/demo/js/services/index.js","angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/allCtrl.js":[function(require,module,exports){
+},{"./controllers":5,"./directives":9,"./routers/approuter":10,"./services":11,"angular":2}],4:[function(require,module,exports){
 require('angular').module('demo').controller('AllCtrl', function ($scope, leaugeService) {
 	
 	$scope.message = "No leauges found";
@@ -22983,18 +22983,18 @@ require('angular').module('demo').controller('AllCtrl', function ($scope, leauge
 		$scope.message = data;
 	})
 });
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/index.js":[function(require,module,exports){
+},{"angular":2}],5:[function(require,module,exports){
 require('./allCtrl');
 require('./rawCtrl');
 require('./swedishCtrl');
 
-},{"./allCtrl":"/home/filip/workspace/origins/src/demo/js/controllers/allCtrl.js","./rawCtrl":"/home/filip/workspace/origins/src/demo/js/controllers/rawCtrl.js","./swedishCtrl":"/home/filip/workspace/origins/src/demo/js/controllers/swedishCtrl.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/rawCtrl.js":[function(require,module,exports){
+},{"./allCtrl":4,"./rawCtrl":6,"./swedishCtrl":7}],6:[function(require,module,exports){
 require('angular').module('demo').controller('RawCtrl', function ($scope, leaugeService) {
 	leaugeService.getRaw(function(data) {
 		$scope.message = data;
 	})
 });
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/controllers/swedishCtrl.js":[function(require,module,exports){
+},{"angular":2}],7:[function(require,module,exports){
 require('angular').module('demo').controller('SwedishCtrl', function ($scope, leaugeService) {
 	
 	$scope.message = "No Swedish leauges found";
@@ -23003,7 +23003,7 @@ require('angular').module('demo').controller('SwedishCtrl', function ($scope, le
 		$scope.message = data;
 	});
 });
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/directives/hitCounter.js":[function(require,module,exports){
+},{"angular":2}],8:[function(require,module,exports){
 require('angular').module('demo').directive("hitCounter", function ($http) {
    return {
         restrict: "E",
@@ -23019,10 +23019,10 @@ require('angular').module('demo').directive("hitCounter", function ($http) {
         }
     };
 });
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}],"/home/filip/workspace/origins/src/demo/js/directives/index.js":[function(require,module,exports){
+},{"angular":2}],9:[function(require,module,exports){
 require('./hitCounter');
 
-},{"./hitCounter":"/home/filip/workspace/origins/src/demo/js/directives/hitCounter.js"}],"/home/filip/workspace/origins/src/demo/js/routers/approuter.js":[function(require,module,exports){
+},{"./hitCounter":8}],10:[function(require,module,exports){
 'use strict';
 
 require('angular');
@@ -23047,10 +23047,10 @@ require('angular').module('demo').config(function ($routeProvider) {
       });
   });
 
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js","angular-route":"/home/filip/workspace/origins/src/demo/bower_components/angular-route/angular-route.js"}],"/home/filip/workspace/origins/src/demo/js/services/index.js":[function(require,module,exports){
+},{"angular":2,"angular-route":1}],11:[function(require,module,exports){
 require('./leaugeService');
 
-},{"./leaugeService":"/home/filip/workspace/origins/src/demo/js/services/leaugeService.js"}],"/home/filip/workspace/origins/src/demo/js/services/leaugeService.js":[function(require,module,exports){
+},{"./leaugeService":12}],12:[function(require,module,exports){
 require('angular').module('demo').factory('leaugeService', function ($http) {
 
    var ROOT_URL = 'http://localhost:9000/api/leagues/';
@@ -23083,4 +23083,4 @@ require('angular').module('demo').factory('leaugeService', function ($http) {
         }
     };
 });
-},{"angular":"/home/filip/workspace/origins/src/demo/bower_components/angular/angular.js"}]},{},["/home/filip/workspace/origins/src/demo/js/app.js"]);
+},{"angular":2}]},{},[3]);
