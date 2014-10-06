@@ -55,10 +55,6 @@ describe("Frontend", function() {
 		    	expect(typeof leaugeService.getSwedish).toEqual('function');
 		    	expect(typeof leaugeService.getRaw).toEqual('function');
 		    });
-
-		    it("should expose a method that return mock data", function(){
-		    	expect(leaugeService.getMockData()).toEqual('Allsvenskan, Division 1 Norra & Premier League');
-		    });
 		});
 	});
 

@@ -1,6 +1,0 @@
-football.json
-football.js
-football-madness.js
-football-functionaliy.js
-football-coffee.coffee
-football-module.js
