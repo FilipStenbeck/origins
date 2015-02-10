@@ -1,5 +1,5 @@
 describe("Backend", function() {
-    var footballUtil = require('../../utils/football-coffee.js');
+    var footballUtil = require('../../utils/football-es5.js');
     var data = [{
         "home": "Djurgården",
           "away": "IFK Göteborg",
@@ -19,38 +19,6 @@ describe("Backend", function() {
         "league": "Premier League"
     }];
 
-  describe("Football util functions", function() {
-
-  	it("should get leagues from matches", function() {
-      expect(footballUtil.groupFromEvent(data)).toEqual(["Allsvenskan", "Division 1 Norra", "Premier League"]);
-    });
-
-    it("should get only Swedish", function() {
-      var leauges = ["Allsvenskan", "Division 1 Norra", "Premier League"];
-      expect(footballUtil.onlySwedish(leauges)).toEqual(["Allsvenskan", "Division 1 Norra"]);
-    });
-
-    it("should only show one of each", function() {
-      var leauges = ["Allsvenskan", "Division 1 Norra", "Allsvenskan"];
-    	expect(footballUtil.onlyOne(leauges)).toEqual(["Allsvenskan", "Division 1 Norra"]);
-  	});
-
-  	it("should know how to sort alphabetically", function() {
-  		var leauges = ["Division 1 Norra", "Allsvenskan"];
-    	expect(footballUtil.sortByName(leauges)).toEqual(["Allsvenskan", "Division 1 Norra"]);
-  	});
-
-  	it("should produce a String from the array", function() {
-  		var leauges = ["Division 1 Norra", "Allsvenskan"];
-    	expect(footballUtil.fold(leauges)).toEqual("Division 1 Norra, Allsvenskan");
-  	});
-
-  	it("should produce messages with comma and one & before last entry", function() {
-  		var leauges = "Division 1 Norra, Allsvenskan";
-    	expect(footballUtil.clean(leauges)).toEqual("Division 1 Norra & Allsvenskan");
-  	});
-  });
-
   describe("Football util public functions", function() {
 
     it("should make nice only Swedish league messages", function() {
@@ -62,7 +30,7 @@ describe("Backend", function() {
     });
 
     it("should handle empty league arrays", function() {
-      expect(footballUtil.swedish([])).toEqual("No Result");
-    });      
+      expect(footballUtil.swedish([])).toEqual("No result");
+    });
   });
 });

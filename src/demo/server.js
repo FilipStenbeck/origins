@@ -1,8 +1,8 @@
  var express = require("express");
  var fs = require('fs');
- var functional = require("./utils/football-coffee");
+ var functional = require("./utils/football-es5.js");
  var imperative = require("./utils/football-madness");
- 
+
  var data = require('./data/fotboll.json');
  var counter = require('./data/counter.json');
  var app = express();
@@ -24,14 +24,14 @@ var allowCrossDomain = function(req, res, next) {
 
 app.use(allowCrossDomain);
 
- 
+
  /* serves main page */
  app.get("/", function(req, res) {
     res.sendfile('index.html')
  });
 
 /* serves the api */
- 
+
  app.get("/api/leagues/se", function(req, res) {
    res.send(functional.swedish(data));
  });
@@ -59,15 +59,15 @@ app.use(allowCrossDomain);
     	} else {
     		res.send(JSON.stringify(counter.hits));
     	}
-	}); 
+	});
  });
 
  /* serves all the static files */
- app.get(/^(.+)$/, function(req, res){ 
+ app.get(/^(.+)$/, function(req, res){
      console.log('static file request : ' + req.params);
-     res.sendFile( __dirname + req.params[0]); 
+     res.sendFile( __dirname + req.params[0]);
  });
- 
+
  app.listen(port, function() {
    console.log("Listening on " + port);
  });
