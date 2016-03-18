@@ -2,9 +2,13 @@
   "name": "football",
   "version": "0.0.1",
   "description": "Showing diffrense between imperative and functional style",
-  "main": "server.js",
+  "main": "index.js",
   "author": "Filip Stenbeck",
-  "license": "MIT",
+  "scripts": {
+    "build": "grunt build",
+    "start": "node index.js",
+    "start:watch": "nodemon index.js"
+  },
   "dependencies": {
     "browserify": "~5.12.1",
     "browserify-shim": "~3.7.0",
@@ -12,8 +16,9 @@
     "lodash": "~2.4.1"
   },
   "devDependencies": {
-    "6to5": "^3.5.3",
     "angular-mocks": "~1.2.22",
+    "bower": "^1.7.7",
+    "browserify": "^5.12.2",
     "coffee-script": "~1.7.1",
     "grunt": "~0.4.5",
     "grunt-6to5": "^3.0.1",
@@ -21,6 +26,7 @@
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-connect": "~0.8.0",
     "grunt-contrib-watch": "~0.6.1",
+    "nodemon": "^1.9.1",
     "time-grunt": "~1.0.0"
   },
   "browser": {

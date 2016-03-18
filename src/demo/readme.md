@@ -7,12 +7,9 @@ Backend uses node.js and frontend is build on AngularJS
 
 Installation
 --------------
-Install node.js 
+Install node.js
 
 ```sh
-install browserify
-npm install -g browserify
-
 Then install the projects npm dependencies
 npm install  (in project root)
 
@@ -24,10 +21,8 @@ bower install (in project root)
 
 Build command
 --------------------------
-browserify ./js/app.js -o ./build/browserify-bundle.js
-
-
+npm run build
 
 Run
 --------------------------
-Type "node server.js" in project root
+npm start

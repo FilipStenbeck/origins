@@ -1,10 +1,10 @@
  var express = require("express");
  var fs = require('fs');
- var functional = require("./utils/football-es5.js");
- var imperative = require("./utils/football-madness");
+ var functional = require("./server/services/football.js");
+ var imperative = require("./server/services/football-madness");
 
- var data = require('./data/fotboll.json');
- var counter = require('./data/counter.json');
+ var data = require('./server/data/fotboll.json');
+ var counter = require('./server/data/counter.json');
  var app = express();
  var port = 9000;
 
@@ -23,7 +23,6 @@ var allowCrossDomain = function(req, res, next) {
 };
 
 app.use(allowCrossDomain);
-
 
  /* serves main page */
  app.get("/", function(req, res) {
@@ -50,7 +49,7 @@ app.use(allowCrossDomain);
 
  app.get("/api/counter", function(req, res) {
 
-    var outputFilename = 'data/counter.json';
+    var outputFilename = './server/data/counter.json';
     counter.hits = counter.hits + 1;
 	fs.writeFile(outputFilename, JSON.stringify(counter, null, 4), function(err) {
     	if(err) {

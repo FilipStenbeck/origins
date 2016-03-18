@@ -6,21 +6,13 @@ module.exports = function (grunt) {
     browserify: {
   		dist: {
     		files: {
-      			'build/browserify-bundle.js': ['js/app.js'],
-      			'test/build/specs.js': ['test/spec/index.js']
+      			'build/browserify-bundle.js': ['js/app.js']
     		},
     		options: {
     		}
   		}
 		},
-		clean: ["build/", "test/build/"],
-    "6to5": {
-      dist: {
-        files: {
-          "utils/football-es5.js": "utils/football-es6.js"
-        }
-      }
-    },
+		clean: ["build/"],
 		watch: {
 	  		scripts: {
 	    		files: ['js/**/*.js', 'test/spec/**/*.js'],
@@ -55,16 +47,15 @@ module.exports = function (grunt) {
       }
  	});
 
-  grunt.loadNpmTasks('grunt-6to5');
+
   grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-browserify');
 
-  grunt.registerTask('sixtofive', ['6to5']);
 	grunt.registerTask('serve', ['build', 'connect:livereload', 'watch']);
 
-	grunt.registerTask('build', ['clean', 'browserify', 'sixtofive']);
+	grunt.registerTask('build', ['clean', 'browserify']);
 
 	// Default task(s)
 	grunt.registerTask('default', ['serve']);
