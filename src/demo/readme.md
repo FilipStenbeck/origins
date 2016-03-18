@@ -18,7 +18,6 @@ bower install (in project root)
 
 ```
 
-
 Build command
 --------------------------
 npm run build
