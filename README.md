@@ -1,4 +1,4 @@
-Origins of functions 
+Origins of functions
 =======
 
 Code examples and a demo used in a presentation  called "on the origin of functions"
@@ -9,29 +9,22 @@ Demo info
 Small webapp to show what you can gain by adopting a more functional style when programming javascript.
 Backend uses node.js and frontend is build on AngularJS
 
-Installation
+##Installation
 --------------
-Install node.js 
 
 ```sh
-install browserify
-npm install -g browserify
-
-Then install the projects npm dependencies
-npm install  (in demo root folder)
+Install the projects npm dependencies
+npm install  (in project root)
 
 Then install AngularJS with bower
-bower install (in demo root)
+bower install (in project root)
 
 ```
 
-Build command
+##Build
 --------------------------
-browserify ./js/app.js -o ./build/browserify-bundle.js
+npm run build
 
-
-
-Run
+##Run
 --------------------------
-Type "node server.js" in project root
-
+npm start
