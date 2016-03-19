@@ -8,11 +8,13 @@ Backend uses node.js and frontend is build on AngularJS
 ##Install
 --------------
 
-```sh
 Install the projects npm dependencies
+```sh
 npm install  (in project root)
+```
 
 Then install AngularJS with bower
+```sh
 bower install (in project root)
 ```
 
@@ -26,6 +28,7 @@ npm run build
 --------------------------
 ```sh
 npm test
+```
 
 ##Run
 --------------------------
