@@ -22,6 +22,11 @@ bower install (in project root)
 npm run build
 ```
 
+##Test
+--------------------------
+```sh
+npm test
+
 ##Run
 --------------------------
 ```sh

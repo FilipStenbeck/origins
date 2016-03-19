@@ -1,20 +1,20 @@
-var _ = require ('lodash');
+const _ = require ('lodash');
 
-var groupFromEvent = (data) => data.map(event => event.league);
+const groupFromEvent = (data) => data.map(event => event.league);
 
-var onlySwedish = (data) => data.filter(name => name === 'Allsvenskan' || name === 'Superettan' || name === 'Division 1 Norra');
+const onlySwedish = (data) => data.filter(name => name === 'Allsvenskan' || name === 'Superettan' || name === 'Division 1 Norra');
 
-var unique = (data) => _.unique(data);
+const unique = (data) => _.unique(data);
 
-var sortByName = (data) => data.sort();
+const sortByName = (data) => data.sort();
 
-var reduce = (data) => _.reduce(data, (names, name) => names + ', ' + name);
+const reduce = (data) => _.reduce(data, (names, name) => names + ', ' + name);
 
-var clean = (data) => data.replace(/,([^,]*)$/," &$1");
+const clean = (data) => data.replace(/,([^,]*)$/," &$1");
 
-var noResult = (data) => "No result";
+const noResult = (data) => "No result";
 
-var beautify = (data) => (data && data !== '') ? clean(data) :  noResult();
+const beautify = (data) => (data && data !== '') ? clean(data) :  noResult();
 
 
 module.exports = {
