@@ -5,12 +5,11 @@ Small demo to show what you can gain by adopting a more functional style of prog
 Backend uses node.js and frontend is build on AngularJS
 
 
-Installation
+##Install
 --------------
-Install node.js
 
 ```sh
-Then install the projects npm dependencies
+Install the projects npm dependencies
 npm install  (in project root)
 
 Then install AngularJS with bower
@@ -18,10 +17,10 @@ bower install (in project root)
 
 ```
 
-Build command
+##Build
 --------------------------
 npm run build
 
-Run
+##Run
 --------------------------
 npm start

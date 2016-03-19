@@ -1,4 +1,122 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+require('angular').module('demo', ['ngRoute']);
+require('./routers/approuter');
+require('./controllers');
+require('./directives');
+require('./services');
+
+
+
+
+
+},{"./controllers":3,"./directives":7,"./routers/approuter":8,"./services":9,"angular":12}],2:[function(require,module,exports){
+require('angular').module('demo').controller('AllCtrl', function ($scope, leaugeService) {
+	
+	$scope.message = "No leauges found";
+
+	leaugeService.getAll(function(data) {
+		$scope.message = data;
+	})
+});
+},{"angular":12}],3:[function(require,module,exports){
+require('./allCtrl');
+require('./rawCtrl');
+require('./swedishCtrl');
+
+},{"./allCtrl":2,"./rawCtrl":4,"./swedishCtrl":5}],4:[function(require,module,exports){
+require('angular').module('demo').controller('RawCtrl', function ($scope, leaugeService) {
+	leaugeService.getRaw(function(data) {
+		$scope.message = data;
+	})
+});
+},{"angular":12}],5:[function(require,module,exports){
+require('angular').module('demo').controller('SwedishCtrl', function ($scope, leaugeService) {
+	
+	$scope.message = "No Swedish leauges found";
+	
+	leaugeService.getSwedish(function(data) {
+		$scope.message = data;
+	});
+});
+},{"angular":12}],6:[function(require,module,exports){
+require('angular').module('demo').directive("hitCounter", function ($http) {
+   return {
+        restrict: "E",
+        link: function (scope, element, attributes) {
+        	$http({
+            method : 'GET',
+            url : 'http://localhost:9000/api/counter',
+        	}).success(function (data) {
+            	var counter = document.createElement("h3");
+            	counter.textContent =  "Number of visits: " + data;
+            	element[0].appendChild(counter);
+    		});
+        }
+    };
+});
+
+},{"angular":12}],7:[function(require,module,exports){
+require('./hitCounter');
+
+},{"./hitCounter":6}],8:[function(require,module,exports){
+'use strict';
+
+require('angular');
+require('angular-route');
+
+require('angular').module('demo').config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'templates/main.html',
+        controller: 'SwedishCtrl'
+      })
+      .when('/all', {
+        templateUrl: 'templates/main.html',
+        controller: 'AllCtrl'
+      })
+      .when('/raw', {
+        templateUrl: 'templates/main.html',
+        controller: 'RawCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
+
+},{"angular":12,"angular-route":11}],9:[function(require,module,exports){
+require('./leaugeService');
+
+},{"./leaugeService":10}],10:[function(require,module,exports){
+require('angular').module('demo').factory('leaugeService', function ($http) {
+
+   var ROOT_URL = 'http://localhost:9000/api/leagues/';
+   
+   var callServer = function(url, callback) {
+    	$http({
+            method : 'GET',
+            url : url,
+        }).success(function (data) {
+            callback(data);
+        });
+    }
+
+    return {        
+        
+        getSwedish : function (callback) {
+            callServer(ROOT_URL + 'se', callback);  
+        },
+        
+        getAll : function (callback) {
+            callServer(ROOT_URL + 'all', callback);  
+        },
+
+        getRaw : function (callback) {
+            callServer(ROOT_URL + 'raw', callback);  
+        }
+    };
+});
+
+},{"angular":12}],11:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /**
@@ -928,7 +1046,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],2:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /**
@@ -23105,121 +23223,4 @@ var styleDirective = valueFn({
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],3:[function(require,module,exports){
-require('angular').module('demo', ['ngRoute']);
-require('./routers/approuter');
-require('./controllers');
-require('./directives');
-require('./services');
-
-
-
-
-
-},{"./controllers":5,"./directives":9,"./routers/approuter":10,"./services":11,"angular":2}],4:[function(require,module,exports){
-require('angular').module('demo').controller('AllCtrl', function ($scope, leaugeService) {
-	
-	$scope.message = "No leauges found";
-
-	leaugeService.getAll(function(data) {
-		$scope.message = data;
-	})
-});
-},{"angular":2}],5:[function(require,module,exports){
-require('./allCtrl');
-require('./rawCtrl');
-require('./swedishCtrl');
-
-},{"./allCtrl":4,"./rawCtrl":6,"./swedishCtrl":7}],6:[function(require,module,exports){
-require('angular').module('demo').controller('RawCtrl', function ($scope, leaugeService) {
-	leaugeService.getRaw(function(data) {
-		$scope.message = data;
-	})
-});
-},{"angular":2}],7:[function(require,module,exports){
-require('angular').module('demo').controller('SwedishCtrl', function ($scope, leaugeService) {
-	
-	$scope.message = "No Swedish leauges found";
-	
-	leaugeService.getSwedish(function(data) {
-		$scope.message = data;
-	});
-});
-},{"angular":2}],8:[function(require,module,exports){
-require('angular').module('demo').directive("hitCounter", function ($http) {
-   return {
-        restrict: "E",
-        link: function (scope, element, attributes) {
-        	$http({
-            method : 'GET',
-            url : 'http://localhost:9000/api/counter',
-        	}).success(function (data) {
-            	var counter = document.createElement("h3");
-            	counter.textContent =  "Number of visits: " + data;
-            	element[0].appendChild(counter);
-    		});
-        }
-    };
-});
-},{"angular":2}],9:[function(require,module,exports){
-require('./hitCounter');
-
-},{"./hitCounter":8}],10:[function(require,module,exports){
-'use strict';
-
-require('angular');
-require('angular-route');
-
-require('angular').module('demo').config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'templates/main.html',
-        controller: 'SwedishCtrl'
-      })
-      .when('/all', {
-        templateUrl: 'templates/main.html',
-        controller: 'AllCtrl'
-      })
-      .when('/raw', {
-        templateUrl: 'templates/main.html',
-        controller: 'RawCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
-
-},{"angular":2,"angular-route":1}],11:[function(require,module,exports){
-require('./leaugeService');
-
-},{"./leaugeService":12}],12:[function(require,module,exports){
-require('angular').module('demo').factory('leaugeService', function ($http) {
-
-   var ROOT_URL = 'http://localhost:9000/api/leagues/';
-   
-   var callServer = function(url, callback) {
-    	$http({
-            method : 'GET',
-            url : url,
-        }).success(function (data) {
-            callback(data);
-        });
-    }
-
-    return {        
-        
-        getSwedish : function (callback) {
-            callServer(ROOT_URL + 'se', callback);  
-        },
-        
-        getAll : function (callback) {
-            callServer(ROOT_URL + 'all', callback);  
-        },
-
-        getRaw : function (callback) {
-            callServer(ROOT_URL + 'raw', callback);  
-        }
-    };
-});
-
-},{"angular":2}]},{},[3]);
+},{}]},{},[1]);
