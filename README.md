@@ -9,7 +9,7 @@ Demo info
 Small webapp to show what you can gain by adopting a more functional style when programming javascript.
 Backend uses node.js and frontend is build on AngularJS
 
-##Installation
+##Install
 --------------
 
 ```sh
@@ -18,13 +18,16 @@ npm install  (in project root)
 
 Then install AngularJS with bower
 bower install (in project root)
-
 ```
 
 ##Build
 --------------------------
+```sh
 npm run build
+```
 
 ##Run
 --------------------------
+```sh
 npm start
+```

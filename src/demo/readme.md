@@ -14,13 +14,16 @@ npm install  (in project root)
 
 Then install AngularJS with bower
 bower install (in project root)
-
 ```
 
 ##Build
 --------------------------
+```sh
 npm run build
+```
 
 ##Run
 --------------------------
+```sh
 npm start
+```
