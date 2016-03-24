@@ -16,9 +16,22 @@ const noResult = (data) => "No result";
 
 const beautify = (data) => (data && data !== '') ? clean(data) :  noResult();
 
+const compose = (sixth, fifth, forth, third, second, first) => {
+  return (data)  => {
+    return (
+      sixth(
+      fifth(
+      forth(
+      third(
+      second(
+      first(
+      data))))))
+    );
+  }
+}
 
 module.exports = {
-    swedish : _.compose(beautify, reduce, sortByName, unique, onlySwedish, groupFromEvent),
+    swedish : compose(beautify, reduce, sortByName, unique, onlySwedish, groupFromEvent),
     all : _.compose(beautify, reduce, sortByName, unique, groupFromEvent),
     raw : groupFromEvent
 }

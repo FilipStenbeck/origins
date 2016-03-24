@@ -57,11 +57,11 @@ app.use(allowCrossDomain);
 
  app.get("/api/counter", function(req, res) {
 
-	fs.writeFile(COUNTER_FILE, JSON.stringify(counterLogic(counter), null, 4), function(err) {
-    	if(err) {
+	fs.writeFile(COUNTER_FILE, JSON.stringify(counterLogic(counter)), function(err) {
+    	if(err || !counter.hits) {
       		res.send("666");
     	} else {
-    		res.send(JSON.stringify(counter.hits));
+    		res.send(counter.hits.toString());
     	}
 	});
  });

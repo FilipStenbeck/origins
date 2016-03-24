@@ -10,7 +10,8 @@
     "build": "./clean.sh; browserify app/app.js > build/browserify-bundle.js",
     "start": "node index.js",
     "start:watch": "nodemon index.js",
-    "test": "mocha  --recursive test"
+    "test": "mocha  --recursive test",
+    "test:watch": "nodemon -x \"npm test\""
   },
   "dependencies": {
     "express": "~4.9.0",
