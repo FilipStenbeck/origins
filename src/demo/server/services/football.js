@@ -16,6 +16,11 @@ const noResult = (data) => "No result";
 
 const beautify = (data) => (data && data !== '') ? clean(data) :  noResult();
 
+/*
+A naive (and very specific) implementation of compose just to show the principle
+For the full implementation of see lodash _.compose
+ ./src/demo/node_modules/lodash/internal/createFlow.js
+*/
 const compose = (sixth, fifth, forth, third, second, first) => {
   return (data)  => {
     return (
@@ -24,14 +29,15 @@ const compose = (sixth, fifth, forth, third, second, first) => {
       forth(
       third(
       second(
-      first(
-      data))))))
+      first(data))))))
     );
   }
 }
 
+
+
 module.exports = {
-    swedish : compose(beautify, reduce, sortByName, unique, onlySwedish, groupFromEvent),
     all : _.compose(beautify, reduce, sortByName, unique, groupFromEvent),
+    swedish : compose(beautify, reduce, sortByName, unique, onlySwedish, groupFromEvent),
     raw : groupFromEvent
 }
