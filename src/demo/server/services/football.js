@@ -2,7 +2,10 @@ const _ = require ('lodash');
 
 const groupFromEvent = (data) => data.map(event => event.league);
 
-const onlySwedish = (data) => data.filter(name => name === 'Allsvenskan' || name === 'Superettan' || name === 'Division 1 Norra');
+const onlySwedish = (data) => data.filter(
+    name => name === 'Allsvenskan' ||
+    name === 'Superettan' ||
+    name === 'Division 1 Norra');
 
 const unique = (data) => _.unique(data);
 
