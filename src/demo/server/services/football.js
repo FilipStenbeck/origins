@@ -8,16 +8,18 @@ const unique = (data) => _.unique(data);
 
 const sortByName = (data) => data.sort();
 
-const reduce = (data) => _.reduce(data, (names, name) => names + ', ' + name);
+const toString = (data) => _.reduce(data, (names, name) => names + ', ' + name);
 
 const clean = (data) => data.replace(/,([^,]*)$/," &$1");
 
 const noResult = (data) => "No result";
 
-const beautify = (data) => (data && data !== '') ? clean(data) :  noResult();
+const hasContent = (data) => (data && data !== '');
+
+const beautify = (data) => hasContent(data) ? clean(data) :  noResult();
 
 module.exports = {
-    all : _.compose(beautify, reduce, sortByName, unique, groupFromEvent),
-    swedish : _.compose(beautify, reduce, sortByName, unique, onlySwedish, groupFromEvent),
+    all : _.compose(beautify, toString, sortByName, unique, groupFromEvent),
+    swedish : _.compose(beautify, toString, sortByName, unique, onlySwedish, groupFromEvent),
     raw : groupFromEvent
 }
